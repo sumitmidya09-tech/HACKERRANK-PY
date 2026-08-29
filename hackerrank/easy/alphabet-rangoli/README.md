@@ -1,4 +1,4 @@
-# String Formatting
+# Alphabet Rangoli
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Easy-green)
 
@@ -83,20 +83,27 @@ $ 0 < size < 27 $
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-29T03:52:43.824Z  
+**Submitted:** 2026-08-29T03:57:08.227Z  
 
 ```py
-def print_formatted(number):
-    
+def print_rangoli(size):
     # your code goes here
-    width = len(f"{number:b}")
-    for i in range(1, number + 1):
-        print(
-        f"{i:>{width}} "
-        f"{i:>{width}o} "
-        f"{i:>{width}X} "
-        f"{i:>{width}b}"
-    )
+    rows = size*2-1
+    columns = (n*2-1)+(n*2-2)
+    k = (rows // 2)+1
+    j = k - 1
+
+    for i in range(1,rows+1):
+        if(k >= i):
+            l1 = [chr(x) for x in range((96+size),(96+size-i),-1)]
+            l2 = [chr(x) for x in range((96+size-i+2),(96+size+1))]       
+        else:
+            l1 = [chr(x) for x in range((96+size),(96+size-j),-1)]
+            l2 = [chr(x) for x in range((96+size-j+2),(96+size+1))]          
+            j -= 1
+        l = l1+l2
+        string = '-'.join(l)
+        print(string.center(columns,'-'))
 
 ```
 
