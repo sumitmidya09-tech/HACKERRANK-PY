@@ -1,4 +1,4 @@
-# Designer Door Mat
+# String Formatting
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Easy-green)
 
@@ -38,21 +38,20 @@ A single integer denoting $n$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-29T03:50:30.742Z  
+**Submitted:** 2026-08-29T03:52:17.925Z  
 
 ```py
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-n, m = map(int, input().split())
-for i in range(n):
-    if i > n//2:
-        mirror_i = n-i-1
-        row = ((".|." * (2*(mirror_i) + 1)).center(m, "-"))
-        print(row)
-    elif i == n // 2:
-        print("WELCOME".center(m, "-"))
-    else:
-        row = (".|." * (2*i + 1)).center(m, "-")
-        print(row)
+def print_formatted(number):
+    
+    # your code goes here
+    width = len(f"{number:b}")
+    for i in range(1, number + 1):
+        print(
+        f"{i:>{width}} "
+        f"{i:>{width}o} "
+        f"{i:>{width}X} "
+        f"{i:>{width}b}"
+    )
 
 ```
 
